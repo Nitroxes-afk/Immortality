@@ -353,16 +353,6 @@ Description.WaistAccessory = ""
 Description.ShouldersAccessory = ""
 ApplyDescription(RigHumanoid, Description)
 
-if not OptionsDefaultFlingOptions.HatFling and OptionsPermanentDeath and replicatesignal then
-replicatesignal(ConnectDiedSignalBackend)
-end
-end
-end
-end
-
-if OptionsPermanentDeath and replicatesignal then
-replicatesignal(ConnectDiedSignalBackend)
-
 if Frames > 15 and OptionsPermanentDeath and OptionsRefit and replicatesignal then
 Refitting = false
 replicatesignal(ConnectDiedSignalBackend)
