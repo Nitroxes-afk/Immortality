@@ -73,7 +73,6 @@ local Rig = nil
 local RigHumanoid = nil
 local RigHumanoidRootPart = nil
 local Success = false
-local Kill = LocalPlayer.Kill
 local Time = nil
 local DeltaTime = nil
 local LastTime = nil
