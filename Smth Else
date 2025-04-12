@@ -152,8 +152,6 @@ local mathsin = math.sin
 
 local osclock = os.clock
 
-local replicatesignal = replicatesignal
-
 local pairs = pairs
 local pcall = pcall
 
