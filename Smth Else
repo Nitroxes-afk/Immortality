@@ -61,10 +61,10 @@ local OptionsDisableScripts = nil
 local OptionsDisableScreenGUIs = nil
 local OptionsFlingEnabled = nil
 local OptionsFlingToolFling = nil
+local OptionsPermanentDeath = nil
 local OptionsFlingTimeout = nil
 local OptionsFlingVelocity = nil
 local OptionsFlingHighlightTargets = nil
-local OptionsPermanentDeath = nil
 
 local BindableEvent = nil
 local Boolean = false
@@ -73,6 +73,7 @@ local Rig = nil
 local RigHumanoid = nil
 local RigHumanoidRootPart = nil
 local Success = false
+local Kill = LocalPlayer.Kill
 local Time = nil
 local DeltaTime = nil
 local LastTime = nil
@@ -151,6 +152,8 @@ local mathrandom = math.random
 local mathsin = math.sin
 
 local osclock = os.clock
+
+local replicatesignal = replicatesignal
 
 local pairs = pairs
 local pcall = pcall
@@ -318,7 +321,6 @@ local HandleClone = Clone(Handle)
 Invisible(HandleClone)
 BreakJoints(HandleClone)
 HandleClone.Parent = AccessoryClone
-PermanentDeath = true
 
 local Weld = Instancenew("Weld")
 Weld.Name = "AccessoryWeld"
@@ -352,14 +354,6 @@ Description.FrontAccessory = ""
 Description.WaistAccessory = ""
 Description.ShouldersAccessory = ""
 ApplyDescription(RigHumanoid, Description)
-
-if Frames > 15 and OptionsPermanentDeath and OptionsRefit and replicatesignal then
-Refitting = false
-replicatesignal(ConnectDiedSignalBackend)
-end
-end
-end
-end
 
 for Index, Instance in pairs(GetDescendants(Rig)) do
 Invisible(Instance)
